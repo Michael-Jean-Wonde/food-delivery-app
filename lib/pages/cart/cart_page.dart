@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/controllers/cart_controller.dart';
+import 'package:food_delivery/pages/home/main_food_page.dart';
 import 'package:food_delivery/utils/app_constants.dart';
 import 'package:food_delivery/utils/dimensions.dart';
 import 'package:food_delivery/widgets/app_icons.dart';
@@ -31,11 +32,16 @@ class CartPage extends StatelessWidget {
                 SizedBox(
                   width: Dimensions.width20 * 5,
                 ),
-                AppIcon(
-                  icon: Icons.home_outlined,
-                  iconColor: Colors.white,
-                  backgroungColor: Colors.blue.shade300,
-                  iconSize: Dimensions.iconSize24,
+                GestureDetector(
+                  onTap: () {
+                    Get.to(() => MainFoodPage());
+                  },
+                  child: AppIcon(
+                    icon: Icons.home_outlined,
+                    iconColor: Colors.white,
+                    backgroungColor: Colors.blue.shade300,
+                    iconSize: Dimensions.iconSize24,
+                  ),
                 ),
                 AppIcon(
                   icon: Icons.shopping_cart,
